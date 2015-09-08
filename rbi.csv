@@ -1,0 +1,101 @@
+##,active,description
+00,1,Test ME
+01,1,Allocated by CTIA
+02,1,Test ME
+03,1,Test ME
+04,1,Test ME
+05,1,Test ME
+06,1,Test ME
+07,1,Test ME
+08,1,Test ME
+09,1,Test ME
+10,0,DECT
+11,1,Reserved
+12,1,Reserved
+13,1,Reserved
+14,1,Reserved
+15,1,Reserved
+16,1,Reserved
+17,1,Reserved
+18,1,Reserved
+19,1,Reserved
+20,1,Reserved
+21,1,Reserved
+22,1,Reserved
+23,1,Reserved
+24,1,Reserved
+25,1,Reserved
+26,1,Reserved
+27,1,Reserved
+28,1,Reserved
+29,1,Reserved
+30,0,Iridium
+31,1,Reserved
+32,1,Reserved
+33,0,DGPT
+34,1,Reserved
+35,1,BABT
+36,1,Reserved
+37,1,Reserved
+38,1,Reserved
+39,1,Reserved
+40,1,Reserved
+41,1,Reserved
+42,1,Reserved
+43,1,Reserved
+44,0,BABT
+45,0,NTA
+46,1,Reserved
+47,1,Reserved
+48,1,Reserved
+49,0,BAPT
+50,0,BZT
+51,0,Cetecom
+52,0,CETECOM
+53,0,TUV
+54,0,Phoenix
+55,1,Reserved
+56,1,Reserved
+57,1,Reserved
+58,1,Reserved
+59,1,Reserved
+60,1,Reserved
+61,1,Reserved
+62,1,Reserved
+63,1,Reserved
+64,1,Reserved
+65,1,Reserved
+66,1,Reserved
+67,1,Reserved
+68,1,Reserved
+69,1,Reserved
+70,1,Reserved
+71,1,Reserved
+72,1,Reserved
+73,1,Reserved
+74,1,Reserved
+75,1,Reserved
+76,1,Reserved
+77,1,Reserved
+78,1,Reserved
+79,1,Reserved
+80,1,Reserved
+81,1,Reserved
+82,1,Reserved
+83,1,Reserved
+84,1,Reserved
+85,1,Reserved
+86,1,TAF
+87,1,Reserved
+88,1,Reserved
+89,1,Reserved
+90,1,Reserved
+91,1,MSAI
+92,1,Reserved
+93,1,Reserved
+94,1,Reserved
+95,1,Reserved
+96,1,Reserved
+97,1,Reserved
+98,1,Reserved
+99,1,GHA
