@@ -111,7 +111,7 @@ int main(int argc, char **argv)
         if(ret == RES_IMEI)
         {
             imei_t imei = *(imei_t*)program_options.imei;
-            ret = luhn(imei);
+            uint8_t chk = luhn(imei);
             printf("RBI: %.2s [%s]\n"
                    "TAC: %.8s\n"
                    "Vendor: %s\n"
@@ -126,7 +126,7 @@ int main(int argc, char **argv)
                    "(unknown)",
                    imei.eu.sn,
                    "IMEI",
-                   (ret == RES_CHECKSUM_INVALID ? "invalid" : "valid"));
+                   (chk == (imei.eu.luhn & 0x0f) ? "valid" : "invalid"));
         }
         else if(ret == RES_IMEISV)
         {

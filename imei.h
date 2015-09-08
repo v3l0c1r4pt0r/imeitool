@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 /**
  * IMEI: (? - 2002)
  *  A    A - B   B   B   B   B   B - C   C   C   C   C   C - D
@@ -133,6 +135,6 @@ typedef enum
 result_t validate(char *imei);
 
 /**
- * check if IMEI has valid checksum
+ * count Luhn checksum of IMEI
  */
-result_t luhn(imei_t imei);
+uint8_t luhn(imei_t imei);

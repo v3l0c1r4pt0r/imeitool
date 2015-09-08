@@ -31,7 +31,7 @@ result_t validate(char *imei)
     return ret;
 }
 
-result_t luhn(imei_t imei)
+uint8_t luhn(imei_t imei)
 {
     int i;
     uint8_t cur;
@@ -42,12 +42,5 @@ result_t luhn(imei_t imei)
         cur *= (i % 2 ? 2 : 1);
         sum += (cur % 10) + (cur / 10);
     }
-    if((10 - (sum % 10)) == (imei.eu.luhn & 0x0f))
-    {
-        return RES_SUCCESS;
-    }
-    else
-    {
-        return RES_CHECKSUM_INVALID;
-    }
+    return 10 - (sum % 10);
 }
