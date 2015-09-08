@@ -124,11 +124,15 @@ typedef enum
     RES_IMEISV,
     RES_IMEI_LNG_INVALID,
     RES_IMEI_INVALID,
-    RES_CHECKSUM_INVALID,
-    RES_CHECKSUM_NOT_PRESENT
+    RES_CHECKSUM_INVALID
 } result_t;
 
 /**
  * check if string is valid IMEI number
  */
 result_t validate(char *imei);
+
+/**
+ * check if IMEI has valid checksum
+ */
+result_t luhn(imei_t imei);

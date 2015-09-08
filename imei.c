@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdint.h>
 
 #include "imei.h"
 
@@ -28,4 +29,25 @@ result_t validate(char *imei)
     }
 
     return ret;
+}
+
+result_t luhn(imei_t imei)
+{
+    int i;
+    uint8_t cur;
+    uint8_t sum = 0;
+    for(i = 0; i < sizeof(imei_t) - 1; i++)
+    {
+        cur = ((uint8_t*)&imei)[i] & 0x0f;
+        cur *= (i % 2 ? 2 : 1);
+        sum += (cur % 10) + (cur / 10);
+    }
+    if((10 - (sum % 10)) == (imei.eu.luhn & 0x0f))
+    {
+        return RES_SUCCESS;
+    }
+    else
+    {
+        return RES_CHECKSUM_INVALID;
+    }
 }
