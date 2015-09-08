@@ -3,6 +3,7 @@
 #include <getopt.h>
 
 #include "err.h"
+#include "imei.h"
 #include "imeitool.h"
 
 char *progname;
@@ -43,7 +44,7 @@ int main(int argc, char **argv)
             {0,          0,                 0,  0     }
         };
 
-        c = getopt_long(argc, argv, "h",
+        c = getopt_long(argc, argv, "hq:",
                         long_options, &option_index);
         if (c == -1)
             break;
@@ -100,5 +101,59 @@ int main(int argc, char **argv)
         default:
             error("getopt returned character code 0%o", c);
         }
+    }
+
+    switch(program_options.mode)
+    {
+    case MOD_QUERY:
+    {
+        result_t ret = validate(program_options.imei);
+        if(ret == RES_IMEI)
+        {
+            imei_t imei = *(imei_t*)program_options.imei;
+            ret = luhn(imei);
+            printf("RBI: %.2s [%s]\n"
+                   "TAC: %.8s\n"
+                   "Vendor: %s\n"
+                   "Model: %s\n"
+                   "Serial Number: %.6s\n"
+                   "Type: %s\n"
+                   "Checksum: %s\n",
+                   imei.present.rbi,
+                   "?",
+                   imei.eu.tac,
+                   "(unknown)",
+                   "(unknown)",
+                   imei.eu.sn,
+                   "IMEI",
+                   (ret == RES_CHECKSUM_INVALID ? "invalid" : "valid"));
+        }
+        else if(ret == RES_IMEISV)
+        {
+            imeisv_t imeisv = *(imeisv_t*)program_options.imei;
+            printf("RBI: %.2s [%s]\n"
+                   "TAC: %.8s\n"
+                   "Vendor: %s\n"
+                   "Model: %s\n"
+                   "Serial Number: %.6s\n"
+                   "Type: %s\n",
+                   imeisv.present.rbi,
+                   "?",
+                   imeisv.eu.tac,
+                   "(unknown)",
+                   "(unknown)",
+                   imeisv.eu.sn,
+                   "IMEISV");
+        }
+        else
+        {
+            error("Validation returned error %d",ret);
+        }
+        break;
+    }
+    case MOD_NEW:
+        break;
+    default:
+        error("You have to use query or new mode");
     }
 }
