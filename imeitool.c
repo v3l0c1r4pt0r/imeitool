@@ -118,7 +118,7 @@ int main(int argc, char **argv)
                    "Model: %s\n"
                    "Serial Number: %.6s\n"
                    "Type: %s\n"
-                   "Checksum: %s\n",
+                   "Checksum: %s",
                    imei.present.rbi,
                    "?",
                    imei.eu.tac,
@@ -127,6 +127,14 @@ int main(int argc, char **argv)
                    imei.eu.sn,
                    "IMEI",
                    (chk == (imei.eu.luhn & 0x0f) ? "valid" : "invalid"));
+            if(chk != (imei.eu.luhn & 0x0f))
+            {
+                printf(" (valid: %d)\n", chk);
+            }
+            else
+            {
+                printf("\n");
+            }
         }
         else if(ret == RES_IMEISV)
         {
