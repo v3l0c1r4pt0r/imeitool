@@ -4,6 +4,7 @@
 
 #include "err.h"
 #include "imei.h"
+#include "rbi.h"
 #include "imeitool.h"
 
 char *progname;
@@ -120,7 +121,7 @@ int main(int argc, char **argv)
                    "Type: %s\n"
                    "Checksum: %s",
                    imei.present.rbi,
-                   "?",
+                   get_rbi_description(imei.present.rbi),
                    imei.eu.tac,
                    "(unknown)",
                    "(unknown)",
