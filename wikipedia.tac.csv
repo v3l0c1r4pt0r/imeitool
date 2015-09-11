@@ -1,0 +1,99 @@
+# TAC,Vendor,Model,Internal
+01124500,Apple,iPhone,
+01130000,Apple,iPhone,MA712LL
+01136400,Apple,iPhone,
+01154600,Apple,iPhone,MB384LL
+01161200,Apple,iPhone 3G,
+01174400,Apple,iPhone 3G,MB496RS
+01180800,Apple,iPhone 3G,MB704LL
+01181200,Apple,iPhone 3G,MB496B
+01193400,Apple,iPhone 3G,
+01194800,Apple,iPhone 3GS,
+01215800,Apple,iPhone 3GS,
+01215900,Apple,iPhone 3GS,MC131B
+01216100,Apple,iPhone 3GS,
+01226800,Apple,iPhone 3GS,
+01233600,Apple,iPhone 4,MC608LL
+01233700,Apple,iPhone 4,MC603B
+01233800,Apple,iPhone 4,MC610LL
+01241700,Apple,iPhone 4,
+01243000,Apple,iPhone 4,MC603KS
+01253600,Apple,iPhone 4,MC610LL/A
+01254200,Apple,iPhone 4,
+01300600,Apple,iPhone 4S,MD260C
+01326300,Apple,iPhone 4,MD198HN/A
+01332700,Apple,iPhone 5,MD642C
+01388300,Apple,iPhone 5S,ME297C/A
+350151,Nokia,3330,
+35089080,Nokia,3410,NHM-2NX
+35099480,Nokia,3410,NHM-2NX
+35148420,Nokia,3410,NHM-2NX
+35148820,Nokia,6310i,NPL-1
+35151304,Nokia,E72-1,RM-530
+35154900,Nokia,6310i,NPL-1
+35171005,Sony Ericsson,Xperia S,
+35174605,Google,Galaxy Nexus,Samsung GT-I9250, Samsung GT-I9250TSGGEN
+35191405,Motorola,Defy Mini,
+35226005,Samsung,Galaxy SIII,
+35238402,Sony Ericsson,K770i,
+35274901,Nokia,6233,
+35291402,Nokia,6210 Navigator,
+35316004,ZTE,Blade,
+35316605,Samsung,Galaxy S3,GT-I9300
+35332705,Samsung,Galaxy SII,GT-I9100
+35328504,Samsung,Galaxy S,GT-I9000
+35351200,Motorola,V300,
+35357800,Samsung,SGH-A800,
+35376800,Nokia,6230,
+35391805,Google,Nexus 4,LG E960
+35405600,Wavecom,M1306B,
+35421803,Nokia,5310,RM-303
+35433004,Nokia,C5-00,RM-645
+35450502,GlobeTrotter,HSDPA Modem,
+35511405,Sony Ericsson,Xperia U,
+35524803,Nokia,2330C-2,RM-512
+35566600,Nokia,6230,
+35569500,Nokia,1100,
+35679404,Samsung,Galaxy Mini,GT-S5570
+35685702,Nokia,6300,
+35693803,Nokia,N900,
+35694603,Nokia,2700,
+35699601,Nokia,N95,
+35700804,Nokia,C1,
+35714904,Huawei,E398U-15 LTE Stick,
+35733104,Samsung,Galaxy Gio,
+35739804,Nokia,N8,
+35788104,Nokia,N950,
+35803106,HTC,HTC One M8s,
+35824005,Google,Nexus 5,LG D820/D821
+35828103,Nokia,6303C,
+35836800,Nokia,6230i,
+35837501,XDA,Orbit 2,
+35837800,Nokia,N6030,RM-74
+35850000,Nokia,Lumia 720,
+35851004,Sony Ericsson,Xperia Active,
+35853704,Samsung,Galaxy SII,
+35869205,Apple,iPhone 5S,MF353TA/A
+35876105,Apple,iPhone 5S,A1457
+35896704,HTC,Desire S,
+35902803,HTC,Wildfire,
+35909205,Samsung,Galaxy Note III,SM-N9000, SM-N9005, SM-N900
+35918804,HTC,One X,
+35920605,Nokia,Lumia 625,
+35929005,Motorola,Moto G,XT1039
+35933005,OROD,6468,
+35935003,Nokia,2720A-2,RM-519
+35972100,Lobster,544,
+35974101,GlobeTrotter,HSDPA Modem,
+35979504,Samsung,Galaxy Note,
+449337,Nokia,6210,
+86107402,Quectel,Queclink GV200,
+86217001,Quectel,Queclink GV200,
+86723902,ZTE Corporation,Rook from EE, Orange Dive 30, Blade A410,
+86813001,Jiayu,G3S,JY-G3
+00000000,N/A,typical fake TAC codes, used in hacked IMEIs,
+01234567,N/A,typical fake TAC codes, used in hacked IMEIs,
+12345678,N/A,typical fake TAC codes, used in hacked IMEIs,
+13579024,N/A,typical fake TAC codes, used in hacked IMEIs,
+
+88888888,N/A,typical fake TAC codes, used in hacked IMEIs,
