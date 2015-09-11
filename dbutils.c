@@ -57,7 +57,12 @@ char *get_line_from_file(FILE *db, char *id)
             continue;
         }
         char *lineid = get_value_from_line(line, 0);
-        if(strncmp(id, lineid, strlen(lineid)) == 0)
+        size_t lng = strlen(lineid);
+        if(lng < 1)
+        {
+            continue;
+        }
+        if(strncmp(id, lineid, lng) == 0)
         {
             return line;
         }
