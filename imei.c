@@ -42,5 +42,5 @@ uint8_t luhn(imei_t imei)
         cur *= (i % 2 ? 2 : 1);
         sum += (cur % 10) + (cur / 10);
     }
-    return 10 - (sum % 10);
+    return (10 - (sum % 10)) % 10;
 }
