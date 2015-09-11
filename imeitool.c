@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <string.h>
 
 #include "err.h"
 #include "imei.h"
@@ -149,19 +150,56 @@ int main(int argc, char **argv)
         else if(ret == RES_IMEISV)
         {
             imeisv_t imeisv = *(imeisv_t*)program_options.imei;
+            char *line = get_line(imeisv.eu.tac, TAC_FILE_SUFFIX);
+            char *vendor = "(unknown)", *model = "(unknown)";
+            if(line)
+            {
+                vendor = get_value_from_line(line, TAC_F_VENDOR);
+                model = get_value_from_line(line, TAC_F_MODEL);
+            }
             printf("RBI: %.2s [%s]\n"
                    "TAC: %.8s\n"
                    "Vendor: %s\n"
                    "Model: %s\n"
                    "Serial Number: %.6s\n"
-                   "Type: %s\n",
+                   "Type: %s\n"
+                   "SVN: %.2s\n",
                    imeisv.present.rbi,
-                   "?",
+                   get_rbi_description(imeisv.present.rbi),
                    imeisv.eu.tac,
-                   "(unknown)",
-                   "(unknown)",
+                   vendor,
+                   model,
                    imeisv.eu.sn,
-                   "IMEISV");
+                   "IMEISV",
+                   imeisv.eu.svn);
+        }
+        else if(ret == RES_IMEI_LNG_INVALID)
+        {
+            size_t lng = strlen(program_options.imei);
+            if(lng >= 2 && lng <= 8)
+            {
+                //only TAC given
+                char *line = get_line(program_options.imei, TAC_FILE_SUFFIX);
+                char *vendor = "(unknown)", *model = "(unknown)";
+                if(line)
+                {
+                    vendor = get_value_from_line(line, TAC_F_VENDOR);
+                    model = get_value_from_line(line, TAC_F_MODEL);
+                }
+                printf("RBI: %.2s [%s]\n"
+                    "Vendor: %s\n"
+                    "Model: %s\n"
+                    "Type: %s\n",
+                    program_options.imei,
+                    get_rbi_description(program_options.imei),
+                    vendor,
+                    model,
+                    "TAC");
+            }
+            else
+            {
+                error("Validation returned error %d",ret);
+            }
         }
         else
         {
