@@ -7,7 +7,7 @@
 
 char *get_value_from_line(char *line, unsigned int n)
 {
-    int i;
+    int i = 0;
     char *ret;
     char *start = line;
     size_t idlng;
