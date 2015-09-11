@@ -1,3 +1,10 @@
+#define DELIM ','
+
+/**
+ * get Nth value from given line
+ */
+char *get_value_from_line(char *line, unsigned int n);
+
 /**
  * get data line from given DB associated with id given
  * \param id first column from csv file

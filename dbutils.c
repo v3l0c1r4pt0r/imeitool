@@ -5,6 +5,23 @@
 
 #include "dbutils.h"
 
+char *get_value_from_line(char *line, unsigned int n)
+{
+    char *ret;
+    if(n == 0)
+    {
+        size_t idlng = strchr(line, DELIM) - line;
+        ret = (char*)malloc(idlng);
+        strncpy(ret, line, idlng);
+        return ret;
+    }
+    else
+    {
+        //TODO
+        return NULL;
+    }
+}
+
 char *get_line_from_file(FILE *db, char *id)
 {
     ssize_t bytesread = 0;
@@ -17,8 +34,8 @@ char *get_line_from_file(FILE *db, char *id)
         {
             continue;
         }
-        //FIXME: compare first column instead of const num of bytes
-        if(strncmp(id, line, 8) == 0)
+        char *lineid = get_value_from_line(line, 0);
+        if(strncmp(id, lineid, strlen(lineid)) == 0)
         {
             return line;
         }
