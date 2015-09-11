@@ -5,6 +5,8 @@
 #include "err.h"
 #include "imei.h"
 #include "rbi.h"
+#include "tac.h"
+#include "dbutils.h"
 #include "imeitool.h"
 
 char *progname;
@@ -113,6 +115,13 @@ int main(int argc, char **argv)
         {
             imei_t imei = *(imei_t*)program_options.imei;
             uint8_t chk = luhn(imei);
+            char *line = get_line(imei.eu.tac, TAC_FILE_SUFFIX);
+            char *vendor = "(unknown)", *model = "(unknown)";
+            if(line)
+            {
+                vendor = get_value_from_line(line, TAC_F_VENDOR);
+                model = get_value_from_line(line, TAC_F_MODEL);
+            }
             printf("RBI: %.2s [%s]\n"
                    "TAC: %.8s\n"
                    "Vendor: %s\n"
@@ -123,8 +132,8 @@ int main(int argc, char **argv)
                    imei.present.rbi,
                    get_rbi_description(imei.present.rbi),
                    imei.eu.tac,
-                   "(unknown)",
-                   "(unknown)",
+                   vendor,
+                   model,
                    imei.eu.sn,
                    "IMEI",
                    (chk == (imei.eu.luhn & 0x0f) ? "valid" : "invalid"));
