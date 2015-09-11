@@ -7,19 +7,41 @@
 
 char *get_value_from_line(char *line, unsigned int n)
 {
+    int i;
     char *ret;
-    if(n == 0)
+    char *start = line;
+    size_t idlng;
+
+    while(i != n)
     {
-        size_t idlng = strchr(line, DELIM) - line;
-        ret = (char*)malloc(idlng);
-        strncpy(ret, line, idlng);
-        return ret;
+        char *newstart = strchr(start, DELIM) + 1;
+        if(newstart == NULL)
+        {
+            break;
+        }
+        start = newstart;
+        i++;
+    }
+
+    char *newstart = strchr(start, DELIM);
+    if(newstart != NULL)
+    {
+        idlng = newstart - start;
     }
     else
     {
-        //TODO
-        return NULL;
+        idlng = strlen(start);
     }
+
+    if(*(start + idlng - 1) == '\n')
+    {
+        idlng--;
+    }
+
+    ret = (char*)malloc(idlng);
+    bzero(ret, idlng + 1);
+    strncpy(ret, start, idlng);
+    return ret;
 }
 
 char *get_line_from_file(FILE *db, char *id)
