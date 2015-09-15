@@ -21,7 +21,8 @@ const char help_format[] =
     "  -n,  --new\tgenerate random IMEI\n"
     "  -v,  --vendor VENDOR\tgenerate IMEI with TAC allocated by VENDOR\n"
     "  -m,  --model MODEL\trestrict generation to specific MODEL\n"
-    "       --rbi RBI\tgenerate IMEI using specific RBI\n"
+    "       --rbi RBI\tgenerate IMEI using specific RBI (cannot be used along\n"
+    "       \t\t\twith -v and -m)\n"
     "\nDISCLAIMER:\n"
     "This program is intended to be used for educational purposes only and it\n"
     "should not be used to help user in any illegal activity. Author takes no\n"
@@ -96,7 +97,6 @@ int main(int argc, char **argv)
 
         case OPT_RBI:
             program_options.rbi = optarg;
-            printf("rbi:%s\n",optarg);
             break;
 
         case '?':
@@ -213,9 +213,19 @@ int main(int argc, char **argv)
         srand(time(NULL));
         int i;
         char **tac_pool = NULL;
-        unsigned int pool_size = fill_tac_pool(&tac_pool,
-                                               program_options.vendor,
-                                               program_options.model);
+        unsigned int pool_size;
+        if(program_options.rbi != NULL)
+        {
+            pool_size = 1;
+            tac_pool = malloc(sizeof(char *));
+            *tac_pool = program_options.rbi;
+        }
+        else
+        {
+            pool_size = fill_tac_pool(&tac_pool,
+                                      program_options.vendor,
+                                      program_options.model);
+        }
         imei_t imei;
         char *outimei = (char*)&imei;
         unsigned int randtac = rand() % pool_size;
