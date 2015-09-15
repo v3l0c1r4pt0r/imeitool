@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <getopt.h>
 #include <string.h>
+#include <time.h>
 
 #include "err.h"
 #include "imei.h"
@@ -48,7 +49,7 @@ int main(int argc, char **argv)
             {0,          0,                 0,  0     }
         };
 
-        c = getopt_long(argc, argv, "hq:",
+        c = getopt_long(argc, argv, "hq:nv:m:",
                         long_options, &option_index);
         if (c == -1)
             break;
@@ -187,14 +188,14 @@ int main(int argc, char **argv)
                     model = get_value_from_line(line, TAC_F_MODEL);
                 }
                 printf("RBI: %.2s [%s]\n"
-                    "Vendor: %s\n"
-                    "Model: %s\n"
-                    "Type: %s\n",
-                    program_options.imei,
-                    get_rbi_description(program_options.imei),
-                    vendor,
-                    model,
-                    "TAC");
+                       "Vendor: %s\n"
+                       "Model: %s\n"
+                       "Type: %s\n",
+                       program_options.imei,
+                       get_rbi_description(program_options.imei),
+                       vendor,
+                       model,
+                       "TAC");
             }
             else
             {
@@ -208,7 +209,28 @@ int main(int argc, char **argv)
         break;
     }
     case MOD_NEW:
+    {
+        srand(time(NULL));
+        int i;
+        char **tac_pool = NULL;
+        unsigned int pool_size = fill_tac_pool(&tac_pool,
+                                               program_options.vendor,
+                                               program_options.model);
+        imei_t imei;
+        char *outimei = (char*)&imei;
+        unsigned int randtac = rand() % pool_size;
+        size_t tacsize = strlen(tac_pool[randtac]);
+        memcpy(imei.eu.tac, tac_pool[randtac], tacsize);
+        char sn[sizeof(imei.eu.sn) + sizeof(imei.eu.tac) - tacsize];
+        for(i = 0; i < sizeof(imei.eu.sn) + sizeof(imei.eu.tac) - tacsize; i++)
+        {
+            sn[i] = rand() % 10 | '0';
+        }
+        memcpy(outimei + tacsize, sn, sizeof(sn));
+        imei.eu.luhn = luhn(imei) | '0';
+        printf("%s\n", outimei);
         break;
+    }
     default:
         error("You have to use query or new mode");
     }
