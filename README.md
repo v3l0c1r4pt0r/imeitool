@@ -37,7 +37,7 @@ This software is distributed AS IS on GNU General Public License v3. License
 does not include any TAC databases included. They are licensed according to:
 * wikipedia - Creative Commons Attribution-ShareAlike License (
 [source](https://en.wikipedia.org/wiki/Type_Allocation_Code))
-* verified - Same as whole repository
+* verified, unverified - Same as whole repository
 
 I have also other, much bigger databases collected from various sites. If you
 would like to get them, just contact me at v3l0c1r4pt0r at gmail dot com. They
