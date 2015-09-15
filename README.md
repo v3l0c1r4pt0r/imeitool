@@ -33,8 +33,9 @@ especially in countries that explicitly forbids this practice.
 License
 -------
 
-This software is distributed AS IS on GNU General Public License v3. License
-does not include any TAC databases included. They are licensed according to:
+This software is distributed AS IS on GNU Lesser General Public License v3.
+License does not include any TAC databases included. They are licensed according
+to:
 * wikipedia - Creative Commons Attribution-ShareAlike License (
 [source](https://en.wikipedia.org/wiki/Type_Allocation_Code))
 * verified, unverified - Same as whole repository
