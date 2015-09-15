@@ -32,7 +32,7 @@
 35151304,Nokia,E72-1,RM-530
 35154900,Nokia,6310i,NPL-1
 35171005,Sony Ericsson,Xperia S,
-35174605,Google,Galaxy Nexus,Samsung GT-I9250, Samsung GT-I9250TSGGEN
+35174605,Google,Galaxy Nexus,Samsung GT-I9250; Samsung GT-I9250TSGGEN
 35191405,Motorola,Defy Mini,
 35226005,Samsung,Galaxy SIII,
 35238402,Sony Ericsson,K770i,
@@ -77,7 +77,7 @@
 35876105,Apple,iPhone 5S,A1457
 35896704,HTC,Desire S,
 35902803,HTC,Wildfire,
-35909205,Samsung,Galaxy Note III,SM-N9000, SM-N9005, SM-N900
+35909205,Samsung,Galaxy Note III,SM-N9000; SM-N9005; SM-N900
 35918804,HTC,One X,
 35920605,Nokia,Lumia 625,
 35929005,Motorola,Moto G,XT1039
@@ -89,11 +89,10 @@
 449337,Nokia,6210,
 86107402,Quectel,Queclink GV200,
 86217001,Quectel,Queclink GV200,
-86723902,ZTE Corporation,Rook from EE, Orange Dive 30, Blade A410,
+86723902,ZTE Corporation,,Rook from EE; Orange Dive 30; Blade A410
 86813001,Jiayu,G3S,JY-G3
-00000000,N/A,typical fake TAC codes, used in hacked IMEIs,
-01234567,N/A,typical fake TAC codes, used in hacked IMEIs,
-12345678,N/A,typical fake TAC codes, used in hacked IMEIs,
-13579024,N/A,typical fake TAC codes, used in hacked IMEIs,
-
-88888888,N/A,typical fake TAC codes, used in hacked IMEIs,
+00000000,N/A,typical fake TAC codes, used in hacked IMEIs
+01234567,N/A,typical fake TAC codes, used in hacked IMEIs
+12345678,N/A,typical fake TAC codes, used in hacked IMEIs
+13579024,N/A,typical fake TAC codes, used in hacked IMEIs
+88888888,N/A,typical fake TAC codes, used in hacked IMEIs
