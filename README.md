@@ -40,10 +40,6 @@ to:
 [source](https://en.wikipedia.org/wiki/Type_Allocation_Code))
 * verified, unverified - Same as whole repository
 
-I have also other, much bigger databases collected from various sites. If you
-would like to get them, just contact me at v3l0c1r4pt0r at gmail dot com. They
-are not pulished here because of licensing issues.
-
 Contributions
 -------------
 
